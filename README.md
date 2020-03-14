@@ -1,6 +1,4 @@
 # web2pdf
-A pluggable utility tool for converting web pages to PDF files written in Python
-#web2pdf
 
 A simple "pluggable" utitility tool for converting web pages to pdf files, written in Python
 
