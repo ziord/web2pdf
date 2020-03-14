@@ -1,0 +1,20 @@
+{
+    "name": "web2pdf",
+    "version": "0.1.0",
+    "author": "ziord",
+    "desc": "A utitility tool for converting webpages to pdfs",
+    "keywords": "pdf webpage converter selenium chromedriver",
+    "project_urls": {
+        "Documentation": "https://github.com/ziord/web2pdf/blob/master/README.md",
+        "Source Code": "https://github.com/ziord/web2pdf"
+    },
+    "dependencies": [
+        "selenium==3.141.0",
+        "pynput",
+        "termcolor",
+        "PyPDF2==1.26.0", 
+        "bs4",
+        "requests==2.21.0",
+        "setuptools==40.6.2"
+    ]
+}
