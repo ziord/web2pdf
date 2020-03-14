@@ -65,5 +65,12 @@ This would generate the pdf in a  ```converted``` folder in your current working
 You must have the [chrome webdriver](https://chromedriver.chromium.org/downloads) installed and set to path.
 
 
+## Installation
+
+Clone this repo and do:
+```
+cd web2pdf
+python setup.py install
+```
 
 
