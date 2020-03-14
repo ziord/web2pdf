@@ -1,6 +1,6 @@
 # web2pdf
 
-A simple "pluggable" utitility tool for converting web pages to pdf files, written in Python
+A "pluggable" utitility tool for converting web pages to pdf files, written in Python
 
 ## Usage
 
@@ -17,7 +17,7 @@ For example:
 if you want to save a page: ```myexample.testing.com\apage```, then ```site_url``` would be ```myexample.testing.com\apage```, and ```base_url``` could be ```myexample.testing.com``` or whatever you choose.
 The most important point to note is that, your function ```spawn_urls()``` (could be named something different) returns two ```list```s, the first containing all the links to the pages you would like to save, and the second containing the titles you'd use to refer to those links. The links and titles ```list```s must correspond if you want a pdf with an ordered title.
 
-## Note
+### Note
 The links and titles lists should be ordered/sorted in the way you want the pages to appear (if converting multiple webpages at once), but if it isn't web2pdf would sort the list using regular string sorting, which might not be what you want.
 Example: 
 ```python
@@ -48,7 +48,7 @@ site_url, base_url = 'myexample.testing.com\apage', 'myexample'
 #call web2pdf()
 w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **dict(site_url=site_url, base_url=base_url))
 
-#or alternatively
+#alternatively
 args_dict = {'site_url' : site_url, 'base_url': base_url}  #use keys that corresponds to your function's arguments
 w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **args_dict)
 
@@ -58,6 +58,11 @@ This would generate the pdf in a  ```converted``` folder in your current working
 ## Dependencies
 
 You must have the [chrome webdriver](https://chromedriver.chromium.org/downloads) installed and set to path.
+
+
+## Supported Platforms
+
+```Web2pdf``` currently supports only Linux and Windows platforms
 
 
 ## Installation

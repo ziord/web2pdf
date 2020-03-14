@@ -15,6 +15,8 @@ from PyPDF2 import (PdfFileReader, PdfFileWriter)
 from pynput.keyboard import Key, Controller
 
 
+class PlatformNotSupportedException(Exception):
+    ...
 
 def get_save_dir():
     dir_ = os.path.join(os.getcwd(), 'pdf')
@@ -58,7 +60,6 @@ def cache_url(url):
 def expand_shadow_element(driver, element):
     shadow_root = driver.execute_script('return arguments[0].shadowRoot', element)
     return shadow_root
-
 
 def get_page_pdf(driver, timeout=5, cont_url_title="tester"):
     try:
@@ -137,6 +138,9 @@ def get_page_pdf(driver, timeout=5, cont_url_title="tester"):
             kbd.release(Key.enter)
             time.sleep(5)
             driver.switch_to.window(cur_window)
+        
+        else:
+            raise PlatformNotSupportedException(f"{platform.system()} not supported")
     finally:
         try:
             
