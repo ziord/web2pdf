@@ -57,7 +57,9 @@ This would generate the pdf in a  ```converted``` folder in your current working
 
 ## Dependencies
 
-You must have the [chrome webdriver](https://chromedriver.chromium.org/downloads) installed and set to path.
+You must have the following:
+* [chrome webdriver](https://chromedriver.chromium.org/downloads) installed and set to path. Chrome browser version must match Chrome driver version.
+* Python >= 3.5
 
 
 ## Supported Platforms
