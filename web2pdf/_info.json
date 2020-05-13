@@ -12,9 +12,10 @@
         "selenium==3.141.0",
         "pynput",
         "termcolor",
-        "PyPDF2==1.26.0", 
+        "PyPDF2==1.26.0",
         "bs4",
         "requests==2.21.0",
-        "setuptools==40.6.2"
+        "setuptools==40.6.2",
+        "lxml"
     ]
 }
