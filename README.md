@@ -39,17 +39,18 @@ In this example ```_list_of_links``` and ```_list_of_titles``` _corresponds_ or 
 #import the w2pconverter
 from web2pdf.core import w2pconverter
 
-#define your url/title generating function
-def spawn_urls(site_url, base_url):
+# define your url/title generating function
+def spawn_urls(...):
     ...
 
-site_url, base_url = 'myexample.testing.com\apage', 'myexample'
+# spawn_urls must return a tuple of lists -> Tuple[List[str], List[str]]
+# the first element list must contain the URLs, and the second element list must contain your choice of "title" for each corresponding URL in the first element list.
 
-#call web2pdf()
-w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **dict(site_url=site_url, base_url=base_url))
+# call web2pdf()
+w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **dict(your_arg=your_arg_value, ...))
 
 #alternatively
-args_dict = {'site_url' : site_url, 'base_url': base_url}  #use keys that corresponds to your function's arguments
+args_dict = {'your_arg' : your_arg_value, ...}  #use keys that corresponds to your function's arguments
 w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **args_dict)
 
 ```
