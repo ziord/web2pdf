@@ -4,18 +4,15 @@ A "pluggable" utitility tool for converting web pages to pdf files, written in P
 
 ## Usage
 
-You have to define a function that takes in two arguments and returns two a tuple of two lists:
+You have to define a function that generates the web page(s) URL(s) with corresponding title(s), and returns the URL(s) and title(s) as a tuple of two lists:
 
 ```python
-def spawn_urls(site_url: str, base_url: str) -> Tuple[List[str], List[str]]:
-    #your code goes here
+def spawn_urls(...) -> Tuple[List[str], List[str]]:
+    # your code goes here
     ...
 ```
-```site_url``` is the link to the page you want to convert
-```base_url``` is the base name you would like to call that link
-For example: 
-if you want to save a page: ```myexample.testing.com\apage```, then ```site_url``` would be ```myexample.testing.com\apage```, and ```base_url``` could be ```myexample.testing.com``` or whatever you choose.
-The most important point to note is that, your function ```spawn_urls()``` (could be named something different) returns two ```list```s, the first containing all the links to the pages you would like to save, and the second containing the titles you'd use to refer to those links. The links and titles ```list```s must correspond if you want a pdf with an ordered title.
+
+In otherwords, your function ```spawn_urls()``` (could be named something different) returns two ```list```s, the first containing all the links to the pages you would like to save, and the second containing the titles you'd use to refer to those links. The links and titles ```list```s must correspond if you want a pdf with an ordered title.
 
 ### Note
 The links and titles lists should be ordered/sorted in the way you want the pages to appear (if converting multiple webpages at once), but if it isn't web2pdf would sort the list using regular string sorting, which might not be what you want.
@@ -36,21 +33,21 @@ In this example ```_list_of_links``` and ```_list_of_titles``` _corresponds_ or 
 
 ```python
 
-#import the w2pconverter
+# import the w2pconverter
 from web2pdf.core import w2pconverter
 
 # define your url/title generating function
-def spawn_urls(...):
+def spawn_urls(...) -> Tuple[List[str], List[str]]:
     ...
 
-# spawn_urls must return a tuple of lists -> Tuple[List[str], List[str]]
+# Again, spawn_urls must return a tuple of lists -> Tuple[List[str], List[str]]
 # the first element list must contain the URLs, and the second element list must contain your choice of "title" for each corresponding URL in the first element list.
 
 # call web2pdf()
 w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **dict(your_arg=your_arg_value, ...))
 
-#alternatively
-args_dict = {'your_arg' : your_arg_value, ...}  #use keys that corresponds to your function's arguments
+# alternatively
+args_dict = {'your_arg' : your_arg_value, ...}  # use keys that corresponds to your function's arguments
 w2pconverter.web2pdf('mypdf.pdf', spawn_urls, **args_dict)
 
 ```
