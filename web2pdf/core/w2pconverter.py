@@ -73,7 +73,7 @@ def get_page_pdf(driver, timeout=5, cont_url_title="tester"):
         new_window = driver.window_handles[1]
         driver.switch_to_window(new_window)
         bsoj = BeautifulSoup(driver.page_source, 'lxml')
-        print(bsoj.prettify())
+        # print(bsoj.prettify())
     except:
         while len(driver.window_handles) <= 1:
             time.sleep(1)
